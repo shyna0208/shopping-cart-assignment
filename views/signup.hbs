@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="/scss/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link href="vendors/css/Grid.css" rel="stylesheet" type="text/css">
+    <link href="vendors/css/normalize.css" rel="stylesheet" type="text/css">
+   <script src="/js/handlebars.min-v4.7.7 (1).js"></script>
+    <title>Sabka Bazaar Groceries Pvt. Ltd. </title>
+</head>
+<body>
+   </header>
+        <!-- Main Navigation Ends-->
+<!--Login Form-->
+<section>
+<div class="loginform">
+    <div class="left">
+      <h1>Signup</h1>
+      <span>We do not share your personal details with anyone.</span>
+    </div>
+    <div class="right">
+       <form name="signupform" id="signupform" autocomplete="false" method="post" action="/home">
+       <div class="txt-field">
+          <input type="text" id="name"  aria-labelledby="Enter First Name" required>
+          <span></span>
+          <label for="name">First Name</label>
+        </div>
+        <div class="txt-field">
+            <input type="text"  id="lastname"  aria-labelledby="Enter Last Name" required> 
+            <span></span>
+            <label for="lastname">Last Name</label>
+          </div>
+          <div class="txt-field">
+            <input type="email" id="email" aria-labelledby="Enter Email" required>
+            <span></span>
+            <label for="email">Email</label>
+          </div>
+          <div class="txt-field">
+            <input type="password" id="password" min="6" pattern="^.*(?=.{6,})(?=.*[a-zA-Z])[a-zA-Z0-9]+$" title="Password must have minimum length 6 characters, a number and alphabet
+            and cannot have spaces."   aria-labelledby="Enter Password" required>
+            <span></span>
+            <label for="password">Password</label>
+          </div>
+        <div class="txt-field">
+          <input type="password" id="confirmpassword"  aria-labelledby="Enter Confirm Password"  required>
+          <span></span>
+          <label for="confirmpassword"> Confirm Password</label>
+        </div>
+         <button id="btn-signup" class="btn-login" type="submit" onclick="store()"> SignUp</button>
+      </form>
+    </div>
+</div>
+</section>
+<!--Login Form Ends -->
+<!--Footer Section-->
+<!--Footer Section Ends-->
+</body>
+</html>
+
+
+
+
+<script>
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirmpassword");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+
+function store()
+{
+var name = document.getElementById("name");
+var lastname = document.getElementById("lastname");
+var email = document.getElementById("email");
+var password = document.getElementById("password")
+var confirm_password = document.getElementById("confirmpassword");
+window.localStorage.setItem('name', name.value);
+window.localStorage.setItem('lastname', lastname.value);
+window.localStorage.setItem('email', email.value);
+window.localStorage.setItem('password', password.value);
+window.localStorage.setItem('confirmpassword', confirmpassword.value);
+}
+</script>
+

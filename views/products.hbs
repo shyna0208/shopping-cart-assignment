@@ -1,0 +1,74 @@
+
+        <!-- Main Navigation Ends-->
+<section class="section-plp">
+<nav class="nav-plp">
+    <div id="product-list">
+        {{#each categories}}
+    {{#if order}}
+    <ul id="mymenu">
+        <li><a aria-label="go to {{this.name}}" href ="products?category={{this.id}}" class="products"> {{this.name}}</a></li>
+    </ul>
+    {{/if}}
+    {{/each}}
+</div>
+</nav>
+
+<article class="article-plp">
+  <div class="dropdown-list">
+  <select name="dropdown-select" class="dropdown-select" id="mobile-select" onchange="location=this.value;">
+    {{#each categories}}
+    <option value="/products?category={{this.id}}" >{{this.name}}</option>
+    {{/each}}
+  </select>
+</div>
+<script>
+  var x=document.getElementById('mobile-select');
+  var y=window.location.pathname+window.location.search;
+  x.value=y;
+</script>
+
+  <div class="row">
+    <div id="products-container"> 
+      {{#each products}}
+    <div class="plp-list">
+    <h2>{{this.name}}</h2>
+
+    <div class="product-description">
+    
+    <div aria-label="Product Image" class="mobile-product">
+    <img src="{{this.imageURL}}">
+    </div>
+    
+    <div class="description mobile-product" aria-label="Product Description" >
+    <p>{{this.description}}</p>
+    
+    </div>
+
+    </div>
+    <div class="price">
+    <div class="showprice">
+     MRP Rs. <span>{{price}}</span> 
+    </div> 
+    <div class="showbtn" id="showbutton">
+      <button aria-label="Add {{this.name}} to cart" class="btn-buy price-btn add-to-cart">Buy Now @ MRP Rs.{{this.price}}</a>
+      <button aria-label="Add {{this.name}} to cart" class="btn-buy price-btn-tablet add-to-cart">Buy Now @ MRP Rs.{{this.price}}</button>
+      <button aria-label="Add {{this.name}} to cart" class="btn-buy buy-now add-to-cart">Buy Now</a>
+    </div>
+    </div>
+    </div>
+    {{/each}}
+    </div>
+</div>
+</article>
+</section>
+
+
+<div class="mini-cart">
+<div class="cart"> <div class="my-cart-header"><h2>My Cart <span class="cart-count"> </span></h2><button class="close-btn" aria-label="cart Close"> X</button>
+</div>
+<section class="cart-section"></section>
+</div>
+</div>
+<!-- Section Ends-->
+<!--Footer Section-->
+<!--Footer Section Ends-->

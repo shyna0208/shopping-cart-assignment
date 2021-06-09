@@ -1,0 +1,107 @@
+
+        <!-- Main Navigation Ends-->
+<section class="section-plp">
+<nav class="nav-plp">
+    <div id="product-list">
+        {{#each categories}}
+    {{#if order}}
+    <ul id="mymenu">
+        <li><a aria-label="go to {{this.name}}" href ="products?category={{this.id}}" class="products"> {{this.name}}</a></li>
+    </ul>
+    {{/if}}
+    {{/each}}
+</div>
+</nav>
+
+<article class="article-plp">
+  <div class="dropdown-list">
+  <select name="dropdown-select" class="dropdown-select" id="mobile-select" onchange="location=this.value;">
+    {{#each categories}}
+    <option value="/products?category={{this.id}}" >{{this.name}}</option>
+    {{/each}}
+  </select>
+</div>
+
+
+  <div class="row">
+    <div id="products-container"> 
+      {{#each products}}
+    <div class="plp-list">
+    <h2>{{this.name}}</h2>
+    <div class="product-description">
+    
+    <div aria-label="Product Image" class="mobile-product">
+    <img src="{{this.imageURL}}">
+    </div>
+    
+    <div class="description mobile-product" aria-label="Product Description" >
+    <p>{{this.description}}</p>
+    
+    </div>
+
+    </div>
+
+    <div class="price-button">
+      <button aria-label="Add {{this.name}} to cart" class="btn-buy price-btn-tablet add-to-cart">Buy Now @ MRP Rs.{{this.price}}</a>
+      <button aria-label="Add {{this.name}} to cart" class="btn-buy price-btn add-to-cart">Buy Now @ MRP Rs.{{this.price}}</a>
+    </div>
+    <div class="price">
+    <div class="showprice">
+      <span>MRP Rs.{{price}}</span> 
+    </div> 
+    <div class="showbtn" id="showbutton">
+      <button aria-label="Add {{this.name}} to cart" class="btn-buy add-to-cart">Buy Now</a>
+    </div>
+    </div>
+    </div>
+    {{/each}}
+    </div>
+</div>
+</article>
+</section>
+
+<div class="mini-cart">
+<dic class="cart">
+<div class="cart-container">
+     <div class="my-cart">
+        <p>
+            My Cart({{0}})
+        </p>
+        <button class="close-btn" aria-label="Close Cart">X</button> 
+    </div>
+<div class="cart-items">
+     <section aria-label="cart items images">
+            <img src='img/products/fruit-n-veg/apple.jpg' class="product-img">
+        </section>
+
+        <section class="itemdetails">
+            <h3 aria-label="cart items Name">Apple- washington Regular - 4pcs</h3>
+            <section>
+                <button aria-label="Add one of this item" class="round cartbutton">-</button>
+                <span aria-label="Quantity of items in cart">1</span>
+                <button aria-label="Reduce one from this item" class="round cartbutton">+</button>
+                <span>X</span>
+                <span aria-label="Price of single item">Rs.187</span>
+                <span aria-label="Total Price for item" class="total">Total</span>
+            </section>
+        </section>
+</div>
+ <div class="row promotionimg">
+        <img aria-label="" src="img/lowest-price.png">
+        <p>You won't find it cheaper anywhere</p>
+</div>
+
+<footer class="cart-footer">
+<span aria-label="Promo code can be applied on payment page">
+     Promo code can be applied on payment page
+</span>
+<button aria-label="checkout" class="checkoutbtn">Proceed to Checkout</button>
+</footer>
+
+
+</div>
+</dic>
+</div>
+<!-- Section Ends-->
+<!--Footer Section-->
+<!--Footer Section Ends-->

@@ -1,0 +1,47 @@
+
+<div class="cart-container">
+    <div class="my-cart-tablet"><h2>My Cart <span class="my-cart-count"> </span></h2></div>
+<div class="my-cart-items">
+   <section class="my-cart-section"></section>
+</div>
+
+<script>
+    const cartcount= document.querySelector('.my-cart-count');
+    cartcount.innerHTML="(" + no + " " + 'items' + ")";
+    const cartitems=document.querySelector('.my-cart-section');
+   cartitems.innerHTML=cartdata;
+   // let mycartdata='';
+   // if (JSON.parse(sessionStorage.getItem('items') =="[]"))
+   // {
+      //  mycartdata+='<div class="empty-cart"><h2>No items in your cart</h2></br><span>Your favourite items are just a click away</span> </div> <button class="start-shopping" aria-label="Start Shopping here">Start Shopping</button>';
+   // }
+    //else
+    //{
+    //   JSON.parse(sessionStorage.getItem('items')).map(data=>{
+        //    mycartdata+='<div class="cart-items"><section aria-label="cart items images"><img src="'+data.image+'"class="product-img"></section><section class="itemdetails"><input type="hidden" value="'+data.id+'"><h3>'+data.name+'</h3><section><button aria-label="Add one of this item" class="round cartbutton decrement">-</button><input type="text" aria-label="Quantity of items in cart" class="item-qty" value="'+data.no+'"/><button aria-label="Reduce one from this item" class="round cartbutton increment">+</button><span> X </span>  <span aria-label="Price of single item" class="item-price">'+ data.price+'</span><span aria-label="Total Price for item" class="total"> </span></section></section></div>';
+        //});
+//mycartdata+= '<div class="myfooter"><div class="row promotionimg"><img src="img/lowest-price.png"><p>You would not find it cheaper anywhere</p></div> <div class="cart-footer"><span aria-label="Promo code can be applied on payment page">Promo code can be applied on payment page</span><div aria-label="checkout" class="checkoutbtn mycheckout" id="checkoutbtn"></div></div></div>';
+ //   }
+
+    /*let mygrandtotal=0;
+    let mytotal=0;
+    let mycartitems=document.getElementsByClassName('itemdetails');
+  // console.log(mycartitems);
+  for (let i=0;i<mycartitems.length;i++)
+   {
+       let mycartrows=mycartitems[i];
+      mypriceelement=mycartrows.getElementsByClassName('item-price')[0];
+      myprice=parseInt(mypriceelement.innerText);
+      myquantityelement=mycartrows.getElementsByClassName('item-qty')[0];
+      myquantity=myquantityelement.value;
+      myitemstotal=mycartrows.getElementsByClassName('total')[0];
+      mytotal=myprice*myquantity;
+      myitemstotal.innerText= "Rs." + " " + mytotal;
+      mygrandtotal=mygrandtotal+mytotal;
+      //console.log(mytotal);
+   }
+//mygrandtotal=mygrandtotal+mytotal;
+   const gtotal=document.querySelector('.mycheckout');
+    //console.log(gtotal);
+    gtotal.innerHTML="Proceed to Checkout" + '<span class="count">Rs.' + mygrandtotal + '</span>';*/
+</script>

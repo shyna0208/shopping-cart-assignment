@@ -1,0 +1,52 @@
+<!-- Slider-->
+
+<div id="container" class="slide-container">
+            
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div id="dots">
+        
+    </div>
+<!--Slider Ends-->
+<!--Container-->
+<script>
+    window.categories = JSON.parse('{{{json categories}}}');
+</script>
+
+
+    <div id="categories-container">
+{{#each categories}}
+{{#if odd}}
+<div class="pet">
+    <div class="photo-column">
+      <img src="{{this.imageUrl}}">
+    </div>
+    <div class="info-column">
+      <h2>{{this.name}}</h2>
+      <p>{{this.description}}
+      <a href="/products?category={{this.id}}" class="btn">Explore {{this.key}}</a>
+      <p>{{this.checkorder}} </p>
+    </div>
+  </div>
+  {{else}}
+  
+<div class="pet2">
+  <div class="info-column">
+    <h2>{{this.name}}</h2>
+    <p>{{this.description}} </p>
+    <a href="/products?category={{this.id}}" class="btn">Explore {{this.key}}</a>
+    <p>{{this.checkorder}} </p>
+  </div>
+
+  <div class="photo-column">
+    <img src="{{this.imageUrl}}">
+  </div>
+
+</div>
+{{/if}}
+{{/each}}
+</div>
+
+<!--Container Ends -->
