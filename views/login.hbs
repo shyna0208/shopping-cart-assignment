@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="/scss/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link href="vendors/css/Grid.css" rel="stylesheet" type="text/css">
+    <link href="vendors/css/normalize.css" rel="stylesheet" type="text/css">
+     <script src="/js/handlebars.min-v4.7.7 (1).js"></script>
+    <title>Sabka Bazaar Groceries Pvt. Ltd. </title>
+</head>
+<body>
+        <!-- Main Navigation Ends-->
+<!--Login Form-->
+<section>
+<div class="loginform">
+    <div class="left">
+      <h1>Login</h1>
+      <span>Get access to your Orders, Wishlist, Recommendations</span>
+    </div>
+    <div class="right">
+       <form name="loginform" autocomplete="off" onsubmit="return check()" method="post" action="/home">
+       <div class="txt-field">
+          <input type="email" id="email" aria-labelledby="Enter Email" required>
+          <span></span>
+          <label for="email">Email</label>
+        </div>
+        <div class="txt-field">
+          <input type="password" id="password"  aria-labelledby="Enter Password" required>
+          <span></span>
+          <label for="password">Password</label>
+        </div>
+        <input type="submit" value="Login" class="btn-login" />
+        </form>
+    </div>
+</div>
+</section>
+<!--Login Form Ends -->
+<!--Footer Section-->
+
+<!--Footer Section Ends-->
+</body>
+<script>
+function check(){
+
+    let storedName = localStorage.getItem('email');
+    let storedPw = localStorage.getItem('password');
+
+    let email = document.getElementById('email');
+    let userPassword = document.getElementById('password');
+
+    if(email.value == storedName && userPassword.value == storedPw){
+       return true;
+    }else{
+        alert('Your Email id and password is incorrect');
+    }
+}
+</script>
+
+</html>

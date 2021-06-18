@@ -2,7 +2,7 @@
   "name": "code-exercise",
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "canned -p 5000 ./server"
@@ -10,6 +10,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
-  }
+    "canned": "^0.3.12",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "hbs": "^4.1.2",
+    "requests": "^0.3.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {}
 }

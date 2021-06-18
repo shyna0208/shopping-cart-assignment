@@ -1,0 +1,51 @@
+
+<header>
+        <!--Main Navigation-->
+
+        <nav class="navi">
+        <div class="row">  
+          <div class="col span-1-of-3">
+            <a href="/" aria-label="Go to Home Page"> <img alt="Logo" src="img/logo.png" class="logo-image"> </a> </li>
+          </div>
+
+          <div class="col span-1-of-3">
+           
+                <ul class="main-nav topnav" id="myTopnav">
+                <li><a  aria-label="Go to Home Page" href="/">Home</a></li>
+                <li><a aria-label="Go to Products Page" href="/products">Products</a></li>
+                </ul>
+         </div>
+          <div class="col span-1-of-3">
+             <ul class="TopNav">
+              <li> <a aria-label="Go to Login Page" href="/login">SignIn</a> </li>
+               <li> <a  aria-label="Go to SignUp Page" href="/signup">Register</a></li>
+               </ul>
+              <div class="shopping-cart">
+            <button type="button" id="cart-btn">
+              <i class="fas fa-shopping-cart icon-cart"></i>
+           <span class="cart-count-info"></span>
+            </button>
+            
+            </div>
+         </div>
+     
+        </nav>
+        <div class="mini-cart">
+<div class="cart"> <div class="my-cart-header"><h2>My Cart <span class="cart-count"> </span></h2><button class="close-btn" aria-label="cart Close"> X</button>
+</div>
+<section class="cart-section"></section>
+</div>
+</div>
+
+</header>
+
+
+<script>
+  const cartcountinfo=document.querySelector('.cart-count-info');
+    let no=0;
+    JSON.parse(sessionStorage.getItem('items')).map(data=>{
+    no=no+data.no;
+    });
+    cartcountinfo.innerHTML=no + " "+ 'items';
+
+</script>
